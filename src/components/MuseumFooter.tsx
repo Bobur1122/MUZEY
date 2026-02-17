@@ -3,14 +3,14 @@ import { Section } from './ui/Section';
 export function MuseumFooter() {
   return (
     <footer className="bg-[#1a1a1a] text-white pt-20 pb-8 border-t-4 border-[#d4af37]">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <div className="px-6 mx-auto max-w-7xl md:px-12">
+        <div className="grid grid-cols-1 gap-12 mb-16 md:grid-cols-3">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-serif font-bold">
+            <h3 className="font-serif text-2xl font-bold">
               Ozod Sharafiddinov
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+            <p className="max-w-xs text-sm leading-relaxed text-gray-400">
               O'zbekistonning eng nufuzli adabiy tanqidchilaridan biri bo'lgan
               shaxsning hayoti, ijodi va merosiga bag'ishlangan raqamli muzey.
             </p>
@@ -21,24 +21,24 @@ export function MuseumFooter() {
             <h4 className="font-bold text-[#d4af37] mb-4 uppercase tracking-wider text-sm">
               Muzey Xaritasi
             </h4>
-            <ul className="space-y-2 text-gray-400 text-sm">
+            <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="transition-colors hover:text-white">
                   Ko'rgazma Zali
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="transition-colors hover:text-white">
                   Raqamli Arxiv
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="transition-colors hover:text-white">
                   Vaqt Yo'lagi
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="transition-colors hover:text-white">
                   Media Xonasi
                 </a>
               </li>
@@ -50,15 +50,15 @@ export function MuseumFooter() {
             <h4 className="font-bold text-[#d4af37] mb-4 uppercase tracking-wider text-sm">
               Aloqa
             </h4>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li>O'zbekiston Milliy Universiteti</li>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li>O'zbekiston jurnalistika va ommaviy komunikatsiyalar universiteti</li>
               <li>Toshkent, O'zbekiston</li>
               <li>info@ozodmuseum.uz</li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+        <div className="flex flex-col items-center justify-between pt-8 text-xs text-gray-500 border-t border-white/10 md:flex-row">
           <p>© 2026 Raqamli Muzey Loyihasi. Barcha huquqlar himoyalangan.</p>
           <p className="mt-2 md:mt-0">
             Ozod Sharafiddinov merosiga bag'ishlanadi

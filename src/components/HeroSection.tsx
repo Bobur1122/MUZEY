@@ -107,7 +107,7 @@ export function HeroSection() {
           }}
           className="text-lg text-[#666] max-w-2xl mx-auto italic font-serif">
 
-          "Adabiyotshunos olim, adabiy tanqidchi, tarjimon va professor
+          "Adabiyotshunos olim, adabiy tanqidchi va tarjimon
           (1929–2005)"
         </motion.p>
 

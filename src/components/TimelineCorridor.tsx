@@ -19,8 +19,8 @@ const milestones = [
 },
 {
   year: '1980–90-yillar',
-  title: 'Professor va ustoz',
-  desc: "Ozod Sharafiddinov XX asrning 90-yillari oʻrtalarigacha Oʻzbekiston Milliy universitetida professor boʻldi. 1995—1997-yillarda „Tafakkur“ jurnali bosh muharrir oʻrinbosari vazifasini bajardi. U 1997-yildan beri „Jahon adabiyoti“ jurnalining bosh muharriri. Ozod Sharafiddinov Beruniy nomidagi davlat mukofoti laureati (1970), „Buyuk xizmatlari uchun“ (1999), „Mehnat shuhrati“ (1997) ordenlari sohibi. 2002-yil 23-avgustda Ozod Sharafiddinovga „Oʻzbekiston qahramoni“ unvoni berildi."
+  title: 'Ustoz va olim',
+  desc: "Ozod Sharafiddinov XX asrning 90-yillari oʻrtalarigacha Oʻzbekiston Milliy universitetida faoliyat yuritgan. 1995—1997-yillarda „Tafakkur“ jurnali bosh muharrir oʻrinbosari vazifasini bajardi. U 1997-yildan beri „Jahon adabiyoti“ jurnalining bosh muharriri. Ozod Sharafiddinov Beruniy nomidagi davlat mukofoti laureati (1970), „Buyuk xizmatlari uchun“ (1999), „Mehnat shuhrati“ (1997) ordenlari sohibi. 2002-yil 23-avgustda Ozod Sharafiddinovga „Oʻzbekiston qahramoni“ unvoni berildi."
 },
 {
   year: '2002',

@@ -32,7 +32,7 @@ Adabiy-estetik muammolarni mustaqil ilmiy nazariy asoslarda izohlash`
   category: 'Noyob suratlar',
   icon: Camera,
   color: 'bg-blue-100',
-  desc: "1929-yil 1-martda Qo‘qon yaqinidagi Oxunqaynar qishlog‘ida tug‘ilgan. 1951-yili O‘rta Osiyo davlat universiteti filologiya fakultetini tugatgan. ToshDUda 1955–1995 yillarda dotsent va professor bo‘lib ishlagan, 1996–1997 yillarda “Tafakkur” jurnalida bosh muharrir o‘rinbosari, 1997-yildan umrining oxirigacha “Jahon adabiyoti” jurnalining bosh muharriri bo‘lgan."
+  desc: "1929-yil 1-martda Qo‘qon yaqinidagi Oxunqaynar qishlog‘ida tug‘ilgan. 1951-yili O‘rta Osiyo davlat universiteti filologiya fakultetini tugatgan. ToshDUda 1955–1995 yillarda dotsent bo‘lib ishlagan, 1996–1997 yillarda “Tafakkur” jurnalida bosh muharrir o‘rinbosari, 1997-yildan umrining oxirigacha “Jahon adabiyoti” jurnalining bosh muharriri bo‘lgan."
 },
 {
   id: 3,

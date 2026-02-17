@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Section } from './ui/Section';
 import { MuseumCard } from './ui/MuseumCard';
-import { Play, Image as ImageIcon, Pause } from 'lucide-react';
+import { Play, Image as ImageIcon, X } from 'lucide-react';
 const tabs = [
 {
   id: 'video',
@@ -17,6 +17,36 @@ const tabs = [
 
 export function MediaRoom() {
   const [activeTab, setActiveTab] = useState('video');
+  const [selectedVideo, setSelectedVideo] = useState<{
+    id: string;
+    title: string;
+    year?: string;
+    duration?: string;
+    url: string;
+  } | null>(null);
+  const videoItems = [
+    {
+      id: 'video-1',
+      title: "Ozod Sharafiddinov Tanlangan asarlar. Ma'naviy kamolot yo'llarida. Jannati odam edi",
+      url: 'https://youtu.be/hGvwqS21MrM?si=vDhHdKw9P5kOoOSp'
+    },
+    {
+      id: 'video-2',
+      title: 'OZOD SHARAFIDDINOV IDEAL SHAXSMIDI?',
+      url: 'https://youtu.be/6fenDtEgYPE?si=AAXIDN92ozTMvyiG'
+    },
+    {
+      id: 'video-3',
+      title: 'Ozod Sharafiddinov bilan suhbat',
+      url: 'https://youtu.be/NwHLgq6Jp5w?si=PbbAZ-0ES3GcQpsf'
+    }
+  ];
+  const getVideoId = (url: string) =>
+    new URL(url).searchParams.get('v') || url.split('/').pop()?.split('?')[0];
+  const getEmbedUrl = (url: string) =>
+    `https://www.youtube.com/embed/${getVideoId(url)}?rel=0`;
+  const getThumbUrl = (url: string) =>
+    `https://img.youtube.com/vi/${getVideoId(url)}/hqdefault.jpg`;
   const photoItems = [
     {
       id: 'photo-1',
@@ -120,22 +150,28 @@ export function MediaRoom() {
             }}
             className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-              {[1, 2, 3].map((i) =>
+              {videoItems.map((item) =>
             <MuseumCard
-              key={i}
-              className="overflow-hidden bg-white/5 border-white/10 group">
+              key={item.id}
+              onClick={() => setSelectedVideo(item)}
+              className="overflow-hidden bg-white/5 border-white/10 group h-full flex flex-col">
 
-                  <div className="relative flex items-center justify-center transition-colors aspect-video bg-black/50 group-hover:bg-black/40">
-                    <div className="flex items-center justify-center w-16 h-16 transition-transform rounded-full bg-white/20 backdrop-blur group-hover:scale-110">
+                  <div className="relative flex items-center justify-center aspect-video overflow-hidden">
+                    <img
+                      src={getThumbUrl(item.url)}
+                      alt={item.title}
+                      className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-black/30"></div>
+                    <div className="relative flex items-center justify-center w-16 h-16 transition-transform rounded-full bg-white/30 backdrop-blur group-hover:scale-110">
                       <Play className="w-6 h-6 text-white fill-current" />
                     </div>
                   </div>
-                  <div className="p-4">
+                  <div className="p-4 bg-black/40 flex-1">
                     <h3 className="mb-1 text-lg font-bold text-white">
-                      Adabiyot haqida mulohazalar
+                      {item.title}
                     </h3>
-                    <p className="text-sm text-gray-400">
-                      Arxiv suhbati, 1998 • 12:45
+                    <p className="text-sm text-gray-300 line-clamp-2">
+                      {item.title}
                     </p>
                   </div>
                 </MuseumCard>
@@ -193,6 +229,65 @@ export function MediaRoom() {
           }
         </AnimatePresence>
       </div>
+
+
+      <AnimatePresence>
+        {selectedVideo &&
+        <motion.div
+          initial={{
+            opacity: 0
+          }}
+          animate={{
+            opacity: 1
+          }}
+          exit={{
+            opacity: 0
+          }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={() => setSelectedVideo(null)}>
+
+          <motion.div
+            initial={{
+              y: 50,
+              opacity: 0
+            }}
+            animate={{
+              y: 0,
+              opacity: 1
+            }}
+            exit={{
+              y: 50,
+              opacity: 0
+            }}
+            className="relative w-full max-w-4xl overflow-hidden bg-black rounded-2xl shadow-2xl"
+            onClick={(e) => e.stopPropagation()}>
+
+            <button
+              onClick={() => setSelectedVideo(null)}
+              className="absolute z-10 p-2 transition-colors rounded-full top-4 right-4 bg-white/10 hover:bg-white/20">
+              <X className="w-5 h-5 text-white" />
+            </button>
+
+            <div className="w-full aspect-video">
+              <iframe
+                className="w-full h-full"
+                src={getEmbedUrl(selectedVideo.url)}
+                title={selectedVideo.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen />
+            </div>
+
+            <div className="p-4 bg-[#1a1a1a] text-white">
+              <h3 className="text-lg font-bold">{selectedVideo.title}</h3>
+              <p className="text-sm text-gray-300">
+                {selectedVideo.title}
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+        }
+      </AnimatePresence>
     </Section>);
 
 }
