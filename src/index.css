@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --museum-bg: #f5f0eb;
+  --museum-text: #1a1a1a;
+  --museum-gold: #d4af37;
+  --museum-gold-light: #e6c86e;
+}
+body {
+  background-color: var(--museum-bg);
+  color: var(--museum-text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--museum-gold);
+}
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.text-gold {
+  color: var(--museum-gold);
+}
+.bg-gold {
+  background-color: var(--museum-gold);
+}
+.border-gold {
+  border-color: var(--museum-gold);
+}
